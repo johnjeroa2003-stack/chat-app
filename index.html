@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat As You Like</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Emoji -->
+    <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.min.js"></script>
+</head>
+<body>
+
+<div class="bg-animation"></div>
+
+<!-- 🌍 LOBBY -->
+<div id="lobbyScreen" class="lobby">
+    <div class="glass-box">
+        <h1>🌍 Chat As You Like</h1>
+
+        <input id="usernameInput" placeholder="Enter your name" />
+
+        <div id="roomList" class="room-list"></div>
+
+        <div class="create-room">
+            <input id="newRoomInput" placeholder="Create room..." />
+            <button onclick="createRoom()">+</button>
+        </div>
+    </div>
+</div>
+
+<!-- 💬 CHAT -->
+<div class="chat-container">
+
+    <div class="chat-header glass">
+        <div>
+            <h2 id="roomName">Room</h2>
+            <span id="status">0 users</span>
+        </div>
+
+        <div class="header-actions">
+            <button onclick="leaveRoom()">⏏</button>
+        </div>
+    </div>
+
+    <div class="chat-main">
+
+        <div id="chatBox" class="chat-box"></div>
+
+        <div class="users-panel glass">
+            <h3>Online</h3>
+            <div id="usersList"></div>
+        </div>
+
+    </div>
+
+    <div class="chat-input glass">
+        <button id="emojiBtn">😊</button>
+        <button class="voice-btn">🎙</button>
+        <input id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">➤</button>
+    </div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

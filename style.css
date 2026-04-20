@@ -1,0 +1,180 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: white;
+}
+
+/* 🌈 Animated Background */
+.bg-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #0f172a, #1e293b, #3b82f6);
+    background-size: 600% 600%;
+    animation: gradientMove 12s ease infinite;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% }
+    50% { background-position: 100% }
+    100% { background-position: 0% }
+}
+
+/* ✨ Glass Effect */
+.glass, .glass-box {
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+}
+
+/* 🌍 Lobby */
+.lobby {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass-box {
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+}
+
+.glass-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+}
+
+/* Room cards */
+.room {
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+}
+
+.room:hover {
+    background: rgba(59,130,246,0.5);
+}
+
+/* Create */
+.create-room {
+    display: flex;
+}
+
+.create-room input {
+    flex: 1;
+}
+
+.create-room button {
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #3b82f6;
+    color: white;
+}
+
+/* 💬 Chat */
+.chat-container {
+    display: none;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+/* Main */
+.chat-main {
+    flex: 1;
+    display: flex;
+}
+
+/* Chat */
+.chat-box {
+    flex: 3;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Messages */
+.message {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 15px;
+    max-width: 70%;
+    animation: fadeIn 0.3s ease;
+}
+
+.you {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    margin-left: auto;
+}
+
+.stranger {
+    background: rgba(255,255,255,0.1);
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(10px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* Users */
+.users-panel {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    gap: 5px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+/* Buttons */
+.chat-input button {
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+
+.voice-btn {
+    background: #22c55e;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+    .users-panel {
+        display: none;
+    }
+}
